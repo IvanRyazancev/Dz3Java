@@ -1,4 +1,4 @@
-public class Dz3 {
+public class Main {
     public static void main(String[] args){
 
         ex01();
@@ -9,6 +9,8 @@ public class Dz3 {
     static void ex01(){
 
         // Пусть дан произвольный список целых чисел, удалить из него четные числа
+
+
 
     }
 
