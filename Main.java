@@ -1,7 +1,7 @@
-import java.util.Objects;
-import java.util.Random;
+import java.util.*;
+import java.util.Collections;
+import java.util.List;
 import java.util.Scanner;
-import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args){
@@ -10,7 +10,7 @@ public class Main {
         System.out.println("Введите количество элементов: ");
         int num = in.nextInt();
         ex01(num);
-        ex02();
+        ex02(num);
         ex03();
     }
 
@@ -36,12 +36,27 @@ public class Main {
         }
 
 
-    static void ex02(){
+    static List<Integer> ex02(int num){
 
         /*
          Задан целочисленный список ArrayList. Найти минимальное, максимальное и среднее арифметическое
          из этого списка. Collections.max()
          */
+
+        List<Integer> list = new ArrayList<>(num);
+
+        for (int i = 0; i < num; i++) {
+            list.add((int)(Math.random()));
+        }
+        return list;
+
+        int max = Collections.max();
+        int min = Collections.min(list);
+        System.out.println("Обработанный массив: " + Collections.max(list),Collections.min(list));
+
+
+
+
 
     }
 
