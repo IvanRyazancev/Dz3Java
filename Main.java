@@ -27,7 +27,7 @@ public class Main {
 
         Integer[] newArr = new Integer[num];
         for (int i = 0; i < randomArr.length; i++) {
-            if (randomArr[i] % 2 == 0 && randomArr[i] != 0) {
+            if (randomArr[i] % 2 != 0 && randomArr[i] != 0) {
                 newArr[i] = randomArr[i];
             }
         }
