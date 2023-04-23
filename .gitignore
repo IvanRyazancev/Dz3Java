@@ -2,7 +2,7 @@
 out/
 !**/src/main/**/out/
 !**/src/test/**/out/
-.idea
+.idea/
 .iml
 
 ### Eclipse ###
@@ -40,4 +40,4 @@ out/
 build/
 .idea/
 /.idea
-.iml
+Dz3.iml
