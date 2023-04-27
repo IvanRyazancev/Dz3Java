@@ -1,7 +1,5 @@
 import java.util.*;
-import java.util.Collections;
-import java.util.List;
-import java.util.Scanner;
+import java.util.IntSummaryStatistics;
 
 public class Main {
     public static void main(String[] args){
@@ -10,8 +8,10 @@ public class Main {
         System.out.println("Введите количество элементов: ");
         int num = in.nextInt();
         ex01(num);
-        ex02(num);
-        ex03();
+        System.out.println("Задача №2: ");
+        System.out.println("Сформированный массив: ");
+        ex02();
+        //ex03();
     }
 
     static void ex01(int num){
@@ -33,32 +33,42 @@ public class Main {
         }
         newArr = Arrays.stream(newArr).filter(Objects::nonNull).toArray(Integer[]::new);
         System.out.println("Обработанный массив: " + Arrays.toString(newArr));
+        System.out.println(" ");
         }
 
 
-    static List<Integer> ex02(int num){
+    static void ex02() {
 
         /*
          Задан целочисленный список ArrayList. Найти минимальное, максимальное и среднее арифметическое
          из этого списка. Collections.max()
          */
 
-        List<Integer> list = new ArrayList<>(num);
-
-        for (int i = 0; i < num; i++) {
-            list.add((int)(Math.random()));
+        Random rnd = new Random();
+        ArrayList<Integer> arrlst = new ArrayList<>();
+        for (int i = 0; i < 10; i++) {
+            arrlst.add(rnd.nextInt(0, 10));
         }
-        return list;
+        IntSummaryStatistics statistics = arrlst
+                .stream()
+                .mapToInt(num -> num)
+                .summaryStatistics();
 
-        int max = Collections.max();
-        int min = Collections.min(list);
-        System.out.println("Обработанный массив: " + Collections.max(list),Collections.min(list));
+        System.out.println(Arrays.toString(arrlst.toArray()));
+        int max = Collections.max(arrlst);
+        int min = Collections.min(arrlst);
+        double sum = statistics.getAverage();
 
 
-
-
-
+        System.out.printf("Максимальный элемент: %d\n", max);
+        System.out.printf("Минимальный элемент: %d\n", min);
+        System.out.printf("Среднее арифметическое: %.1f\n", (sum));
     }
+
+
+
+
+
 
     static void ex03(){
 
