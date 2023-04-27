@@ -1,6 +1,8 @@
 import java.util.*;
 import java.util.IntSummaryStatistics;
 
+import static java.util.Collections.list;
+
 public class Main {
     public static void main(String[] args){
 
@@ -11,7 +13,8 @@ public class Main {
         System.out.println("Задача №2: ");
         System.out.println("Сформированный массив: ");
         ex02();
-        //ex03();
+        System.out.println("Задача №3: ");
+        ex03(num);
     }
 
     static void ex01(int num){
@@ -36,7 +39,6 @@ public class Main {
         System.out.println(" ");
         }
 
-
     static void ex02() {
 
         /*
@@ -59,23 +61,31 @@ public class Main {
         int min = Collections.min(arrlst);
         double sum = statistics.getAverage();
 
-
         System.out.printf("Максимальный элемент: %d\n", max);
         System.out.printf("Минимальный элемент: %d\n", min);
-        System.out.printf("Среднее арифметическое: %.1f\n", (sum));
+        System.out.printf("Среднее арифметическое: %.1f\n", sum);
+        System.out.println(" ");
     }
 
-
-
-
-
-
-    static void ex03(){
+    static void ex03(int num){
 
         /*
         Заполнить список названиями планет Солнечной системы в произвольном порядке с повторениями.
         Вывести название каждой планеты и количество его повторений в списке.
-         */
+        */
 
+        Random random = new Random();
+        String[] list = {"Меркурий","Венера","Земля","Марс","Юпитер","Сатурн","Уран","Нептун"};
+        List<String> newList = new ArrayList<>(num);
+        for (int i = 0; i < num; i++) {
+            newList.add(list[random.nextInt(list.length)]);
+        }
+        System.out.println("Список планет с повторениями: " + newList);
+        for (int i = 0; i < list.length; i++) {
+            int count = Collections.frequency(newList, list[i]);
+            System.out.println((i) + " " + list[i] + " встречается " + count + " раз.");
+            }
+        }
     }
-}
+
+
